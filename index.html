@@ -1,0 +1,270 @@
+<!-- BEM Schreibweise https://cssguidelin.es/#bem-like-naming
+Erstellen Sie eine Webpräsenz zu einem selbst gewählten Thema.
+
+Setzen Sie es als Sass-Projekt auf.
+
+Die Präsenz besteht aus einer Landing-Page und einer oder mehreren Inhaltsdokumenten.
+Verwenden Sie Texte und Grafiken. Leertexte sind nicht erlaubt.
+Ein Formular muß enthalten sein.
+
+Erstellen Sie eine Desktop- und eine Mobilversion und wenn nötig zusätzliche Versionen.
+Halten Sie das Design insbesondere für die Mobilversion funktional.
+
+Der Code ist semantisch und syntaktisch korrekt, arbeiten Sie unobtrusive, dry und nach best practices. Teilen Sie die styles auf einzelne Dateien auf.
+Verwenden Sie im Unterricht besprochene Vorgehensweisen und Konzepte.
+
+Die Verwendung von Layout-techniken bleibt Ihnen überlassen, enthalten sein müssen:
+ Ein overlay, transition und animation.
+
+Verwenden Sie strukturelle Pseudoklassen wenn angebracht und verteilen Sie id und class nur wenn wirklich notwendig, es sei denn Sie arbeiten nach BEM oder SMACSS. Dies ist dann kurz zu dokumentieren.
+
+Das Formular wird clientseitig mit js geprüft. Der Anwender erhält eine Nachricht als neues Element im DOM des Formular-Dokumentes. Clientseitiges js ist nach ES5 zu erarbeiten, unobtrusive, dry und nach best-practices.
+
+Die Verwendung von Grafiken und Animationen soll zum Text passen und nicht überzogen sein.
+Erstellen Sie ein in sich schlüssiges und benutzerfreundliches Design.
+
+Die Projekte werden als zip-Datei vollständig bis spätestens 31.01.2019 hochgeladen.
+Am 24.01.19 und 31.01.19 wird jeweils die Hälfte von Ihnen das Projekt kurz (ca. 10 Minuten) am Beamer vorstellen.
+An diesen beiden Tagen ist die Präsenz verpflichtend.
+Ich werde vorab ein doodle freigeben, in dem Sie sich für Tag und Zeit eintagen können.
+
+Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
+--------------------------------------------------------------------------------------
+
+-Landing-Page DONE!
+-eine oder mehrere Inhaltsdokumenten (Food and Drinks) mal schauen
+-Texte und Grafikenn DONE!
+-Desktop DONE!
+-Mobilversion
+-1x overlay
+-1x transition
+-1x animation
+-Formular clientseitig mit js
+
+/*@for $i from 1 through 7 {
+  .gallery_wrapper_img:nth-of-type(#{$i}) {
+    grid-area: img + $i;
+  }
+}*/
+-->
+
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Ryong</title>
+    <link rel="stylesheet" type="text/css" href="style.compact.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <!--------------------- HOME - SECTION ---------------------->
+    <section id="home" class="section__home">
+      <header>
+        <div class="hl header__hl"></div>
+        <nav class="home__nav">
+          <ul>
+            <li><a href="#about" onclick="test('about'); return false;">about us</a></li>
+            <li><a href="#menu" onclick="test('menu'); return false;">menu</a></li>
+            <li><a href="#booking" onclick="test('booking'); return false;">booking</a></li>
+            <li><a href="#contact" onclick="test('contact'); return false;">contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="home__sidebar">
+        <a href="#home-section"><img class="sidebar__logo" src="assets/RyongLogo.png" alt="logo"></a>
+        <div class="vl sidebar__verticalLine"></div>
+        <a href="https://www.instagram.com/ryong_berlin/"><img class="sidebar__sns sns--ig" src="assets/instagram.png" alt="instagram"></a>
+        <a href="https://www.facebook.com/ryongberlin"><img class="sidebar__sns sns--fb" src="assets/facebook.png" alt="facebook"></a>
+        <a href="mailto:hallo@ryong.de"><img class="sidebar__sns sns--email" src="assets/envelope.png" alt="envelope"></a>
+      </div>
+
+      <div class="home__rightBottomCornerLines">
+        <div class="hl rightBottomCornerLines__hl"></div>
+        <div class="vl rightBottomCornerLines__vl"></div>
+      </div>
+    </section>
+
+    <!--------------------- ABOUT US - SECTION ---------------------->
+    <section id="about" class="section__about">
+      <div class="about__header">
+        <h2>About Us</h2>
+        <div class="hl about__hl"></div>
+      </div>
+
+      <p class="about__description">The truth is that scrambled eggs are easy to make. Unfortunately,
+        they are also the easy to make WRONG. At a root level, scrambled eggs
+        are simply beaten eggs which are fried and – for lack of a better word
+        – scrambled. But like most things that are simple (take love and
+        martinis as examples), people have found ways to make them needlessly
+        complex.</p>
+
+      <div class="about__gallery">
+        <div class="gallery_wrapper wrapper--small">
+          <img class="gallery_wrapper_img" src="assets/Ryong_dessert2.jpg" alt="dessert2">
+        </div>
+
+        <div class="gallery_wrapper wrapper--small">
+          <img class="gallery_wrapper_img" src="assets/Ryong_architecture.jpg" alt="architecture">
+        </div>
+
+        <div class="gallery_wrapper wrapper--small">
+          <img class="gallery_wrapper_img" src="assets/RYONG_lights1.jpg" alt="lights1">
+        </div>
+
+        <div class="gallery_wrapper wrapper--small">
+          <img class="gallery_wrapper_img" src="assets/RYONG_midnight_sun.jpg" alt="burger1">
+        </div>
+
+        <div class="gallery_wrapper wrapper--small">
+          <img class="gallery_wrapper_img" src="assets/RYONG_golden_burger_Phan.jpg" alt="burger2">
+        </div>
+
+        <div class="gallery_wrapper wrapper--small">
+          <img class="gallery_wrapper_img" src="assets/RYONG_golden_temple.jpg" alt="appetizer1">
+        </div>
+
+        <div class="gallery_wrapper wrapper--big">
+          <img class="gallery_wrapper_img" src="assets/RYONG_Bento.jpg" alt="bento1">
+        </div>
+      </div>
+    </section>
+
+    <!--------------------- MENU - SECTION ---------------------->
+    <section id="menu" class="section__menu">
+      <div class="menu__sidenav">
+        <div class="sidenav__appetizer sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__noodle sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__burger sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__wraps sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__bento sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__desserts sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__nonal sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+        <div class="sidenav__alc sidenav__wrapper--style">
+          <img src="" alt="">
+        </div>
+      </div>
+
+      <div class="menu__sidenavLines">
+        <div class="hl sidenavLines__hl"></div>
+        <div class="vl sidenavLines__vl"></div>
+      </div>
+
+      <div class="menu__container">
+        <div class="container__description stretch"></div>
+        <div class="container__ulOne"></div> <!-- CSV -->
+        <div class="container__ulTwo"></div>
+        <span class="stretch"></span>
+      </div>
+    </section>
+
+    <!--------------------- BOOKING - SECTION ---------------------->
+    <section id="booking" class="section__booking">
+      <div class="booking__container">
+        <div class="container__adress">
+          <h3>Adress</h3>
+          <p>Torstr 59, 10119 Berlin</p>
+        </div>
+
+        <div class="container__openinghours">
+          <h3>Opening Hours</h3>
+          <p>mon-sat 12a.m.-11p.m</p>
+        </div>
+
+        <div class="container__booking">
+          <h3>Booking</h3>
+          <p>030 30307047</p>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------- CONTACT - SECTION ---------------------->
+    <section id="contact" class="section__contact">
+      <div class="contact--flexcon">
+        <div id="map" class=" contact__maps"></div>
+        <div class="contact__impressum">
+          <p>Ryong GbR<br>
+            Torstr 59, 10119 Berlin<br>
+            Telefon: 030 30307047<br>
+            E-Mail: hallo@ryong.de
+            <br><br>
+            Die Fotos auf dieser Webseite wurden teils vom RYONG,
+            teils von Chi Phan erstellt.
+            Nähere Informationen auf Anfrage.
+            <br><br>
+            Vertretungsberechtigte Gesellschafter:<br>
+            Mai Huy Thong Tran, John MacLean<br>
+            Umsatzsteuer-ID: DE308083932<br>
+            Zuständige Aufsichtsbehörden:<br>
+            Ordnungsamt Pankow von Berlin, Ordnungsamt Mitte von Berlin </p>
+        </div>
+      </div>
+      <div class="contact__form">
+        <form class="form" name="form" action="/action_page.php" onsubmit="return validateForm()" method="post">
+          E-Mail (required): <input type="text" name="femail" required>
+          Subject: <input type="text" name="fsubject">
+          <input type="text" name="ftext" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </section>
+
+    <!--------------------- IG FEED - SECTION ---------------------->
+    <section id="igfeed" class="section__igfeed">
+      <h5>@ryong_berlin</h5>
+      <div id="instafeed"></div> <!-- http://instafeedjs.com/ -->
+    </section>
+
+    <!--------------------- FOOTER ---------------------->
+    <footer class="footer">
+      <div class="footer__sns">
+        <a href="https://www.instagram.com/ryong_berlin/"><img class="footer__sns__img sns--ig" src="assets/instagram.png" alt="instagram"></a>
+        <a href="https://www.facebook.com/ryongberlin"><img class="footer__sns__img sns--fb" src="assets/facebook.png" alt="facebook"></a>
+        <a href="mailto:hallo@ryong.de"><img class="footer__sns__img sns--email" src="assets/envelope.png" alt="envelope"></a>
+      </div>
+    </footer>
+
+    <!--<script src="./d3/d3.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      d3.text("ryong_menu.csv", function(data) {
+        var parsedCSV = d3.csv.parseRows(data);
+        console.log(parsedCSV);
+        /*var container = d3.select("body")
+            .append("table")
+            .selectAll("tr")
+                .data(parsedCSV).enter()
+                .append("tr")
+            .selectAll("td")
+                .data(function(d) { return d; }).enter()
+                .append("td")
+                .text(function(d) { return d; });*/
+      });
+    </script>-->
+
+    <!--<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>-->
+    <!--/*<script type="text/javascript" src="instafeed.min.js"></script>-->
+    <!--<script src="./jquery-csv-master/src/jquery.csv.js"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <script src="fileHandler.js" charset="utf-8"></script>-->
+    <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=MYKEY&callback=initMap">
+    </script>-->
+  </body>
+
+</html>
