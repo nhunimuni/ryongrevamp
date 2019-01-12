@@ -1,0 +1,167 @@
+/*------------------------------------------------------------------*/
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; height: 100%; scroll-behavior: smooth; }
+
+section { min-height: 100%; }
+
+a { text-decoration: none; }
+
+li { list-style-type: none; }
+
+h1, h2, h3, h4, h5, li, a, p { font-family: 'Helvetica Neue', sans-serif; }
+
+.hl { border-top: 3px solid #D49202; }
+
+.vl { border-left: 3px solid #D49202; }
+
+/*------------------ HOME ---------------------*/
+.section__home { background-image: url("../assets/landing.png"); background-repeat: no-repeat; background-position: bottom; background-size: auto; background-attachment: fixed; position: relative; }
+
+/*------------------ HOME - header ---------------------*/
+header { display: flex; justify-content: flex-end; margin: 0; padding: 0; }
+
+.header__hl { width: 316px; margin-top: 66px; }
+
+.home__nav { float: right; }
+
+.home__nav ul { margin: 44px 150px 0 0; }
+
+.home__nav li { float: left; padding-left: 78px; }
+
+.home__nav li:first-of-type { padding-left: 45px; }
+
+.home__nav a { color: #D49202; font-size: 32px; font-weight: 300; }
+
+/*------------------ HOME - sidebar ---------------------*/
+.home__sidebar { position: absolute; top: 41px; margin-left: 66px; display: flex; flex-direction: column; align-items: center; }
+
+.sidebar__verticalLine { margin-top: 7vh; margin-bottom: 7vh; height: 34vh; }
+
+.sidebar__sns { width: 32px; padding-bottom: 3vh; }
+
+.logo_yong { padding: 20px 0 0 220px; }
+
+/*------------------ HOME - rightBottomCornerLines ---------------------*/
+.home__rightBottomCornerLines { position: absolute; top: 83vh; left: 1291px; }
+
+.rightBottomCornerLines__hl { width: 52px; transform: translateY(52px); }
+
+.rightBottomCornerLines__vl { height: 52px; transform: translateX(52px); }
+
+/*------------------ ABOUT ---------------------*/
+.section__about { background-color: #ffffff; }
+
+/*------------------ ABOUT - header ---------------------*/
+.about__header { display: flex; justify-content: center; }
+
+h2 { color: #D49202; font-size: 60px; font-weight: 400; margin: 90px 0 0 0; }
+
+.about__hl { margin-left: 50px; width: 870px; margin-top: 132.5px; height: 0px; }
+
+.about__description { width: 870px; font-size: 25px; font-weight: 300; text-align: justify; margin: 18px 0 0 435px; }
+
+/*------------------ ABOUT - gallery ---------------------*/
+.about__gallery { display: grid; grid-template-columns: 180px 180px 180px 280px; grid-template-rows: 180px 180px 325px; grid-gap: 50px; grid-template-areas: "img1 img2 img3 img4" "img5 img7 img7 img7" "img6 img7 img7 img7"; justify-content: center; padding: 55px 0 100px 0; }
+
+.gallery_wrapper { overflow: hidden; }
+
+.wrapper--small { width: 180px; height: 180px; }
+
+.wrapper--big { width: 740px; height: 555px; }
+
+.gallery_wrapper_img { height: 100%; }
+
+.wrapper--small.gallery_wrapper_img { transform: translateX(-20%); }
+
+.gallery_wrapper:nth-of-type(1) { grid-area: img1; }
+
+.gallery_wrapper:nth-of-type(2) { grid-area: img2; }
+
+.gallery_wrapper:nth-of-type(3) { grid-area: img3; }
+
+.gallery_wrapper:nth-of-type(4) { grid-area: img4; }
+
+.gallery_wrapper:nth-of-type(5) { grid-area: img5; }
+
+.gallery_wrapper:nth-of-type(6) { grid-area: img6; }
+
+.gallery_wrapper:nth-of-type(7) { grid-area: img7; }
+
+/*------------------ MENU ---------------------*/
+.section__menu { position: relative; padding: 65px 0 65px 0; background-color: #18100D; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; }
+
+/*------------------ MENU - sidenav ---------------------*/
+.menu__sidenav { display: flex; justify-content: space-between; width: 830px; }
+
+.sidenav__wrapper--style { width: 60px; height: 60px; border: 1px solid #D49202; }
+
+.sidenav_img { width: 100%; }
+
+.sidenavLines__vl { height: 35px; margin: 0 0 0 208px; }
+
+.sidenavLines__hl { width: 970px; margin-bottom: 60px; }
+
+/*------------------ MENU - menucard ---------------------*/
+.menu__container { width: 960px; height: 365px; display: flex; justify-content: space-between; }
+
+.container__ulOne, .container__ulTwo { border: 2px solid #f76707; width: 450px; height: 364px; display: grid; grid-template-columns: 350px 100px; grid-template-rows: 30px 156px 30px 156px; grid-gap: 1px; grid-template-areas: "title-refer1 price1" "description1 description1" "title-refer2 price2" "description2 description2"; }
+
+.ul__div--style { display: flex; }
+
+.ul__h4--style { margin: 0 10px 0 0; color: white; font-size: 25px; font-weight: 400; }
+
+.ul__refer--style { margin: 0; color: white; font-size: 15px; font-weight: 400; }
+
+.ul__price--style { margin: 0; color: white; font-size: 25px; font-weight: 400; text-align: right; }
+
+.ul__p--style { margin-top: 20px; color: white; font-size: 20px; font-weight: 400; text-align: justify; }
+
+.title-refer1 { grid-area: title-refer1; }
+
+.description1 { grid-area: description1; }
+
+.price1 { grid-area: price1; }
+
+.menu__container li { color: white; }
+
+/*------------------ MENU - arrows ---------------------*/
+.menu__arrows { margin-top: 70.5px; }
+
+.arrows--style { font-size: 40px; color: white; }
+
+.arrows_left { margin-right: 30px; }
+
+/*------------------ BOOKING ---------------------*/
+.section__booking { background-image: url("../assets/Ryongscales.jpg"); background-repeat: no-repeat; background-position: top; background-size: cover; position: relative; }
+
+.booking__container { width: 500px; height: 500px; background-color: rgba(24, 16, 13, 0.75); border: 3px solid #D49202; position: absolute; top: 50%; left: 50%; margin: -250px 0 0 -250px; text-align: center; display: flex; justify-content: center; flex-direction: column; }
+
+h3 { font-size: 40px; font-weight: 350; color: #D49202; margin: 0; }
+
+.booking__container p { font-size: 25px; font-weight: 300; color: #D49202; margin: 0; }
+
+.container__openinghours { margin: 60px 0 60px 0; }
+
+/*------------------ CONTACT ---------------------*/
+.section__contact { background-image: url("../assets/RYONG_lights2.jpg"); background-repeat: no-repeat; background-position: top; background-size: cover; position: relative; display: flex; justify-content: center; padding: 90px 0 90px 0; }
+
+.contact--flexcon { display: flex; flex-direction: column; }
+
+.contact__maps { width: 500px; height: 315px; margin: 0 170px 27px 0; background-color: white; }
+
+.contact__impressum { width: 500px; color: white; font-size: 15px; }
+
+.contact__form { width: 400px; height: 580px; background-color: white; }
+
+/*------------------ IGFEED ---------------------*/
+.section__igfeed { min-height: 350px; text-align: center; }
+
+h5 { margin: 0; color: #D49202; font-size: 40px; font-weight: 300; }
+
+/*------------------ FOOTER ---------------------*/
+footer { background-color: #18100D; height: 80px; }
+
+.footer__sns { display: flex; justify-content: center; padding-top: 24px; }
+
+.footer__sns__img.sns--ig, .footer__sns__img.sns--fb { margin-right: 30px; }

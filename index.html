@@ -54,7 +54,7 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
   <head>
     <meta charset="utf-8">
     <title>Ryong</title>
-    <link rel="stylesheet" type="text/css" href="style.compact.css">
+    <link rel="stylesheet" type="text/css" href="CSS/style.compact.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -65,10 +65,10 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
         <div class="hl header__hl"></div>
         <nav class="home__nav">
           <ul>
-            <li><a href="#about" onclick="test('about'); return false;">about us</a></li>
-            <li><a href="#menu" onclick="test('menu'); return false;">menu</a></li>
-            <li><a href="#booking" onclick="test('booking'); return false;">booking</a></li>
-            <li><a href="#contact" onclick="test('contact'); return false;">contact</a></li>
+            <li><a href="#about">about us</a></li>
+            <li><a href="#menu">menu</a></li>
+            <li><a href="#booking">booking</a></li>
+            <li><a href="#contact">contact</a></li>
           </ul>
         </nav>
       </header>
@@ -85,6 +85,8 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
         <div class="hl rightBottomCornerLines__hl"></div>
         <div class="vl rightBottomCornerLines__vl"></div>
       </div>
+
+      <img class="logo_yong" src="assets/RyongLogo22.png" alt="ryong">
     </section>
 
     <!--------------------- ABOUT US - SECTION ---------------------->
@@ -135,42 +137,46 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
     <!--------------------- MENU - SECTION ---------------------->
     <section id="menu" class="section__menu">
       <div class="menu__sidenav">
-        <div class="sidenav__appetizer sidenav__wrapper--style">
-          <img src="" alt="">
+        <div class="sidenav__appetizers sidenav__wrapper--style">
+          <img class="sidenav_img" src="" alt="">
         </div>
-        <div class="sidenav__noodle sidenav__wrapper--style">
-          <img src="" alt="">
+        <div class="sidenav__noodles sidenav__wrapper--style">
+          <img class="sidenav_img" src="assets/noodles.png" alt="noodle-icon">
         </div>
-        <div class="sidenav__burger sidenav__wrapper--style">
-          <img src="" alt="">
+        <div class="sidenav__burgers sidenav__wrapper--style">
+          <img class="sidenav_img" src="assets/hamburger.png" alt="burger-icon">
         </div>
         <div class="sidenav__wraps sidenav__wrapper--style">
-          <img src="" alt="">
+          <img class="sidenav_img" src="" alt="">
         </div>
-        <div class="sidenav__bento sidenav__wrapper--style">
-          <img src="" alt="">
+        <div class="sidenav__bentos sidenav__wrapper--style">
+          <img class="sidenav_img" src="" alt="">
         </div>
         <div class="sidenav__desserts sidenav__wrapper--style">
-          <img src="" alt="">
+          <img class="sidenav_img" src="" alt="">
         </div>
         <div class="sidenav__nonal sidenav__wrapper--style">
-          <img src="" alt="">
+          <img class="sidenav_img" src="" alt="">
         </div>
         <div class="sidenav__alc sidenav__wrapper--style">
-          <img src="" alt="">
+          <img class="sidenav_img" src="" alt="">
         </div>
       </div>
 
       <div class="menu__sidenavLines">
-        <div class="hl sidenavLines__hl"></div>
         <div class="vl sidenavLines__vl"></div>
+        <div class="hl sidenavLines__hl"></div>
       </div>
 
       <div class="menu__container">
-        <div class="container__description stretch"></div>
-        <div class="container__ulOne"></div> <!-- CSV -->
+        <div class="container__ulOne"></div>
         <div class="container__ulTwo"></div>
-        <span class="stretch"></span>
+      </div>
+
+      <div class="menu__arrows">
+        <span class="arrows_left arrows--style">
+          <</span> <span class="arrows_right arrows--style">>
+        </span>
       </div>
     </section>
 
@@ -240,29 +246,10 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
       </div>
     </footer>
 
-    <!--<script src="./d3/d3.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      d3.text("ryong_menu.csv", function(data) {
-        var parsedCSV = d3.csv.parseRows(data);
-        console.log(parsedCSV);
-        /*var container = d3.select("body")
-            .append("table")
-            .selectAll("tr")
-                .data(parsedCSV).enter()
-                .append("tr")
-            .selectAll("td")
-                .data(function(d) { return d; }).enter()
-                .append("td")
-                .text(function(d) { return d; });*/
-      });
-    </script>-->
-
-    <!--<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>-->
-    <!--/*<script type="text/javascript" src="instafeed.min.js"></script>-->
-    <!--<script src="./jquery-csv-master/src/jquery.csv.js"></script>
+    <script src="data/ryongmenu.csv" type="text/csv"></script>
+    <script src="node_modules/papaparse/papaparse.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="script.js" charset="utf-8"></script>
-    <script src="fileHandler.js" charset="utf-8"></script>-->
     <!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=MYKEY&callback=initMap">
     </script>-->
   </body>
