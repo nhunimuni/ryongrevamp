@@ -1,61 +1,13 @@
-<!-- BEM Schreibweise https://cssguidelin.es/#bem-like-naming
-Erstellen Sie eine Webpräsenz zu einem selbst gewählten Thema.
-
-Setzen Sie es als Sass-Projekt auf.
-
-Die Präsenz besteht aus einer Landing-Page und einer oder mehreren Inhaltsdokumenten.
-Verwenden Sie Texte und Grafiken. Leertexte sind nicht erlaubt.
-Ein Formular muß enthalten sein.
-
-Erstellen Sie eine Desktop- und eine Mobilversion und wenn nötig zusätzliche Versionen.
-Halten Sie das Design insbesondere für die Mobilversion funktional.
-
-Der Code ist semantisch und syntaktisch korrekt, arbeiten Sie unobtrusive, dry und nach best practices. Teilen Sie die styles auf einzelne Dateien auf.
-Verwenden Sie im Unterricht besprochene Vorgehensweisen und Konzepte.
-
-Die Verwendung von Layout-techniken bleibt Ihnen überlassen, enthalten sein müssen:
- Ein overlay, transition und animation.
-
-Verwenden Sie strukturelle Pseudoklassen wenn angebracht und verteilen Sie id und class nur wenn wirklich notwendig, es sei denn Sie arbeiten nach BEM oder SMACSS. Dies ist dann kurz zu dokumentieren.
-
-Das Formular wird clientseitig mit js geprüft. Der Anwender erhält eine Nachricht als neues Element im DOM des Formular-Dokumentes. Clientseitiges js ist nach ES5 zu erarbeiten, unobtrusive, dry und nach best-practices.
-
-Die Verwendung von Grafiken und Animationen soll zum Text passen und nicht überzogen sein.
-Erstellen Sie ein in sich schlüssiges und benutzerfreundliches Design.
-
-Die Projekte werden als zip-Datei vollständig bis spätestens 31.01.2019 hochgeladen.
-Am 24.01.19 und 31.01.19 wird jeweils die Hälfte von Ihnen das Projekt kurz (ca. 10 Minuten) am Beamer vorstellen.
-An diesen beiden Tagen ist die Präsenz verpflichtend.
-Ich werde vorab ein doodle freigeben, in dem Sie sich für Tag und Zeit eintagen können.
-
-Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
---------------------------------------------------------------------------------------
-
--Landing-Page DONE!
--eine oder mehrere Inhaltsdokumenten (Food and Drinks) mal schauen ???
--Texte und Grafikenn DONE!
--Desktop DONE!
--1x overlay MODAL DONE!
--1x transition DONE!
--1x animation DONE! lowkey
--Formular clientseitig mit js DONE
-
--Mobilversion
-
-
-/*@for $i from 1 through 7 {
-  .gallery_wrapper_img:nth-of-type(#{$i}) {
-    grid-area: img + $i;
-  }
-}*/
--->
+<!-- BEM Namespacing !!-->
 
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
 
   <head>
+    <meta charset="utf-8">
     <title>Ryong</title>
     <link rel="stylesheet" type="text/css" href="CSS/style.compact.css">
+    <link rel="stylesheet" type="text/css" href="CSS/mobilestyle.compact.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -119,11 +71,10 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
       <div class="about__header">
         <h2>About Us</h2>
         <div class="hl about__hl"></div>
+        <p class="about__description">Ryong. fire and herbs is a vegetarian restaurant with lots of vegan options. The team of Ryong has analyzed, refined and combined recipes from the Vietnamese and Japanese cuisines to an experimental and
+          sophisticated streetfood with fresh spelt and pho noodles, soft and crunchy bao-burgers with tempura crusts and bento boxes with a fine selection of vegetables, pickles and herbs. Pretty much everything is homemade, from the spelt noodles
+          and bao buns to mayonnaises, sauces, the vegan condesed milk and lemonades. The interior was designed by owner Tran Mai Huy Thong and his team at Oukan lab.</p>
       </div>
-
-      <p class="about__description">Ryong. fire and herbs is a vegetarian restaurant with lots of vegan options. The team of Ryong has analyzed, refined and combined recipes from the Vietnamese and Japanese cuisines to an experimental and
-        sophisticated streetfood with fresh spelt and pho noodles, soft and crunchy bao-burgers with tempura crusts and bento boxes with a fine selection of vegetables, pickles and herbs. Pretty much everything is homemade, from the spelt noodles
-        and bao buns to mayonnaises, sauces, the vegan condesed milk and lemonades. The interior was designed by owner Tran Mai Huy Thong and his team at Oukan lab.</p>
 
       <div class="about__gallery">
         <div class="gallery_wrapper wrapper--small">
@@ -158,6 +109,13 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
 
     <!--------------------- MENU - SECTION ---------------------->
     <section id="menu" class="section__menu">
+      <div class="menu__header">
+        <h2>Menu</h2>
+        <div class="hl menu__hl"></div>
+      </div>
+      <object data="data/ryong_menu.pdf">
+        <a href="data/ryong_menu.pdf">PDF laden</a>
+      </object>
       <h3 class="menu__h3">APPETIZER</h3>
       <div class="menu__sidenav">
         <div class="sidenav__appetizers sidenav__wrapper--style">
@@ -227,8 +185,9 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
       </div>
 
       <div class="menu__arrows">
-        <img class="arrows_left arrows--style" src="assets/back.png" alt="leftarrow">
-        <img class="arrows_right arrows--style" src="assets/next.png" alt="rightarrow">
+        <img src="assets/back.png" alt="leftarrow">
+        <a href="fullpdf.html"><img src="assets/pdf.png" alt="pdf"></a>
+        <img src="assets/next.png" alt="rightarrow">
       </div>
     </section>
 
@@ -310,8 +269,8 @@ Die Note erhalten Sie nach Durchsicht der Quelltexte hier im moodle.
     <script src="data/ryongmenu.csv" type="text/csv"></script>
     <script src="node_modules/papaparse/papaparse.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="script_desktop.js"></script>
-    <script src="script_mobile.js"></script>
+    <script src="script/script_desktop.js"></script>
+    <script src="script/script_mobile.js"></script>
   </body>
 
 </html>

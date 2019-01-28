@@ -1,0 +1,35 @@
+$main-color: #d49202;
+$about-bg-color: rgb(255, 255, 255);
+$menu-bg-color: rgb(24, 16, 13);
+$contact-bg-color: rgb(255, 255, 255);
+$footer-bg-color: rgb(24, 16, 13);
+$font-color: rgb(255, 255, 255);
+$modal-bg-color: rgba(0, 0, 0, 0.9);
+
+@function centeringHelper($width, $height, $unit) {
+  @return ($height/2)*(-1)+$unit 0 0 ($width/2)*(-1)+$unit;
+}
+
+@mixin centeringStuff($width, $height, $unit){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: centeringHelper($width, $height, $unit);
+}
+
+@mixin centeringStuffWithUnknownSize{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin backgroundImage($imgpath, $repeat, $position, $size, $attachment) {
+    background: {
+        image: url($imgpath);
+        repeat: $repeat;
+      position: $position;
+          size: $size;
+      attachment: $attachment;
+    }
+}

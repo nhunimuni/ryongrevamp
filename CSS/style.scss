@@ -1,7 +1,4 @@
-$main-color: #D49202;
-$about-bg-color: #ffffff;
-$menu-bg-color: #18100D;
-$contact-bg-color: #ffffff;
+@import "./helper";
 
 /*------------------------------------------------------------------*/
 
@@ -56,7 +53,7 @@ h1, h2, h3, h4, h5, li, a, p, label, input {
   width: 100%;
   min-height: 100%;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: $modal-bg-color;
 }
 
 .modal--none {
@@ -64,15 +61,12 @@ h1, h2, h3, h4, h5, li, a, p, label, input {
 }
 
 .modal__ad {
-  width: 700px;
-  height: 400px;
-  border: 1px solid white;
+  width: 50%;
+  height: 55%;
+  border: 1px solid rgb(255, 255, 255);
   overflow: hidden;
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -200px 0 0 -350px;
+  @include centeringStuffWithUnknownSize;
 }
 
 .ad__close {
@@ -87,10 +81,10 @@ h1, h2, h3, h4, h5, li, a, p, label, input {
   font-size: 70px;
   font-weight: 500;
   color: #D49202;
-  width: 700px;
-  margin: 90px auto;
+  text-align: center;
+  margin-top: 5%;
 
-   animation: elastic 2s linear 0s infinite normal;
+  animation: elastic 2s linear 0s infinite normal;
 }
 
 @keyframes elastic {
@@ -133,8 +127,7 @@ h1, h2, h3, h4, h5, li, a, p, label, input {
   position: absolute;
   top: 50%;
   left: 50%;
-
-  margin: -30% 0 0 -30%;
+  @include centeringStuff(60,60, %);
 }
 
 .uparrow--none {
@@ -143,12 +136,7 @@ h1, h2, h3, h4, h5, li, a, p, label, input {
 
 /*------------------ HOME ---------------------*/
 .section__home {
-  background-image: url("../assets/landing.png");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: auto;
-  background-attachment: fixed;
-
+  @include backgroundImage("../assets/landing.png", no-repeat, bottom, auto, fixed);
   position: relative;
 }
 
@@ -269,8 +257,8 @@ padding-left: 4vw;
 /*------------------ HOME - rightBottomCornerLines ---------------------*/
 .home__rightBottomCornerLines {
   position: absolute;
-  top: 83vh;
-  left: 1291px;
+  top: 81%;
+  right: 7%;
 }
 
 .rightBottomCornerLines__hl {
@@ -290,30 +278,42 @@ padding-left: 4vw;
 
 /*------------------ ABOUT - header ---------------------*/
 .about__header {
-display: flex;
+display: grid;
+grid-template-columns: 20% 55%;
+grid-template-rows: 20% 80%;
+grid-column-gap: 3%;
+grid-template-areas:
+  "aboutus line"
+  "empty descrAbout";
+
 justify-content: center;
+padding-top: 90px;
 }
 
 h2 {
   color: $main-color;
   font-size: 60px;
   font-weight: 400;
-  margin: 90px 0 0 0;
+}
+
+.section__about h2 {
+  margin: 0;
+  grid-area: aboutus;
 }
 
 .about__hl {
-  margin-left: 50px;
-  width: 870px;
-  margin-top: 132.5px;
-  height: 0px;
+  margin: 5% 0 0 0;
+  width: 100%;
+  height: 0;
+  grid-area: line;
 }
 
 .about__description {
-  width: 870px;
   font-size: 25px;
   font-weight: 300;
+  margin: 0;
   text-align: justify;
-  margin: 18px 0 0 435px;
+  grid-area: descrAbout;
 }
 
 /*------------------ ABOUT - gallery ---------------------*/
@@ -373,10 +373,14 @@ h2 {
   margin: 0 auto;
 }
 
+.section__menu object, .menu__header{
+  display:none;
+}
+
 .menu__h3{
   position: absolute;
-  top: 500px;
-  left: 50px;
+  top: 55%;
+  left: 1%;
   transform: rotate(-90deg);
 
   opacity: 0;
@@ -391,7 +395,7 @@ h2 {
 }
 
 .sidenav__wrapper--style:hover {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .sidenav__wrapper--style {
@@ -438,6 +442,8 @@ h2 {
   height: 365px;
   display: flex;
   justify-content: space-between;
+
+  position: relative;
 }
 
 .changetransition {
@@ -462,33 +468,30 @@ h2 {
   display: flex;
 }
 
+.container__ulOne h4, .container__ulOne p {
+  color: $font-color;
+  font-weight: 400;
+}
+
 .ul__h4--style {
   margin: 0 10px 0 0;
-  color: white;
   font-size: 20px;
-  font-weight: 400;
 }
 
 .ul__refer--style {
   margin: 0;
-  color: white;
   font-size: 15px;
-  font-weight: 400;
 }
 
 .ul__price--style {
   margin: 0;
-  color: white;
   font-size: 18px;
-  font-weight: 400;
   text-align: right;
 }
 
 .ul__p--style {
   margin-top: 20px;
-  color: white;
   font-size: 15px;
-  font-weight: 400;
   text-align: justify;
 }
 
@@ -504,31 +507,19 @@ h2 {
   grid-area: price1;
 }
 
-.menu__container li {
-  color: white;
-}
-
 /*------------------ MENU - arrows ---------------------*/
 .menu__arrows {
   margin-top: 0;
   cursor: pointer;
 }
 
-.arrows--style {
-  width: 20px;
-}
-
-.arrows_left {
-  margin-right: 30px;
+.menu__arrows img {
+  width: 30px;
 }
 
 /*------------------ BOOKING ---------------------*/
 .section__booking {
-  background-image: url("../assets/Ryongscales.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  background-attachment: fixed;
+  @include backgroundImage("../assets/Ryongscales.jpg", no-repeat, top, cover, fixed);
   position: relative;
 }
 
@@ -538,10 +529,7 @@ h2 {
   background-color: rgba(24, 16, 13, 0.75);
   border: 3px solid $main-color;
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -250px 0 0 -250px;
+  @include centeringStuff(500, 500, px);
   text-align: center;
 
   display: flex;
@@ -569,24 +557,23 @@ h3 {
 
 /*------------------ CONTACT ---------------------*/
 .section__contact {
-  //background-image: url("../assets/RYONG_golden_burger_Phan.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
   background-color: $contact-bg-color;
   position: relative;
 }
 
 .contact__header {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.section__contact h2 {
+  margin-top: 90px;
 }
 
 .contact__hl {
-  margin-left: 50px;
   width: 870px;
-  margin-top: 132.5px;
-  height: 0px;
+  margin: 132.5px 0 0 50px;
+  height: 0;
 }
 
 .contact--flexcon {
@@ -601,7 +588,7 @@ justify-content: center;
 }
 
 .contact__impressum p {
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 18px;
   font-weight: 300;
   text-align: left;
@@ -636,9 +623,7 @@ justify-content: center;
   caret-color: $main-color;
 }
 
-.form input[type="text"]:focus, .form input[type="email"]:focus {
-
-}
+/*.form input[type="text"]:focus, .form input[type="email"]:focus {}*/
 
 .form input[name="femail"], .form input[name="fsubject"] {
   height: 30px;
@@ -650,32 +635,34 @@ justify-content: center;
 
 .form input:last-of-type {
   background-color: $main-color;
+  color: $font-color;
   font-size: 15px;
-  border: none;
-  color: white;
+
   padding: 10px 25px;
-  text-decoration: none;
   margin: 20px 0 0 0;
+
   cursor: pointer;
+  border: none;
+  text-decoration: none;
 }
 
 .form input:last-of-type:hover {
   background-color: lighten($menu-bg-color,20);
 }
 
-
-
 .form__response {
   width: 0;
   height: 0;
   visibility: hidden;
   overflow: hidden;
-  border: 5px solid $main-color;
-  box-shadow: 0px 0px 18px #888888;
-  background-color: white;
+
   position: absolute;
   top: 0;
   right: 0;
+
+  border: 5px solid $main-color;
+  box-shadow: 0px 0px 18px rgb(136, 136, 136);
+  background-color: rgb(255, 255, 255);
 
   transition: all 0.5s;
 }
@@ -688,7 +675,6 @@ h5 {
 }
 
 .response--none {
-
   display: none;
 }
 
@@ -699,7 +685,7 @@ h5 {
 
 /*------------------ FOOTER ---------------------*/
 footer {
-  background-color: $menu-bg-color;
+  background-color: $footer-bg-color;
   height: 80px;
 }
 
@@ -711,134 +697,4 @@ footer {
 
 .footer__sns__img.sns--ig, .footer__sns__img.sns--fb {
   margin-right: 30px;
-}
-
-
-/*------------------ MEDIA QUERY ---------------------*/
-@media only screen and (max-width: 600px) {
-
-  /*------------------ OVERLAY ---------------------*/
-  .ad__title {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .modal__ad {
-    width: 80%;
-    height: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -25% 0 0 -40%;
-  }
-
-  .ad__img {
-    width: auto;
-    height: 100%;
-  }
-
-
-  /*------------------ HOME ---------------------*/
-  .header__hl, .uparrow, .home__mousedown {
-    display: none;
-  }
-
-  header {
-   width: 100%;
-   height: 500px;
-   background-color: rgba(24, 16, 13, 0.9);
-
-   display: flex;
-   justify-content: flex-start;
-   position: fixed;
-   top: 0;
-   width: 100%;
-   min-height: 100%;
-   z-index: 1;
-  }
-
-  .home__nav {
-    float: left;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .home__nav ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  .home__nav li {
-    float: none;
-    padding: 0;
-    padding-top: 10%;
-  }
-
-  .home__nav li:first-of-type {
-    display: block;
-    padding: 0;
-  }
-
-  .home__nav li:nth-of-type(2) {
-    padding-left: 0;
-  }
-
-  .mobilenav--hidden {
-    display: none;
-  }
-
-  .home__logoyong {
-    width: 80%;
-    padding: 95px 0 0 37%;
-  }
-
-  .home__sidebar {
-    margin-left: 10%;
-  }
-
-  .mobilemenu {
-    display: block;
-    position: fixed;
-    top: 680px;
-    right: 20px;
-    background: lighten($menu-bg-color, 20);
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
-    z-index: 1;
-  }
-
-  .mobilemenu__img {
-    width: 30px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -15px 0 0 -15px;
-  }
-
-  /*------------------ GALLERY ---------------------*/
-  .about__gallery {
-    display: block;
-  }
-
-  .gallery_wrapper {
-    width: 20em;
-    height: 20em;
-    margin: 0 auto;
-  }
-
-  @for $i from 1 through 4 {
-    .gallery_wrapper:nth-of-type(#{$i}) {
-      display: none;
-    }
-  }
-
-  /*------------------ MAP ---------------------*/
-  .contact__maps {
-    width: 100%;
-    height: 315px;
-  }
 }

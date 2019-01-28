@@ -1,0 +1,234 @@
+@import "./helper";
+
+/*------------------ MEDIA QUERY ---------------------*/
+@media only screen and (max-width: 600px) {
+
+  /*------------------ OVERLAY ---------------------*/
+  .ad__title {
+    font-size: 40px;
+    text-align: center;
+    margin: 20% 0 0 0;
+  }
+
+  .modal__ad {
+    width: 80%;
+    height: 50%;
+    @include centeringStuffWithUnknownSize;
+  }
+
+  .ad__img {
+    width: auto;
+    height: 100%;
+  }
+
+
+  /*------------------ HOME ---------------------*/
+  .header__hl, .uparrow, .home__mousedown, .home__rightBottomCornerLines {
+    display: none;
+  }
+
+  header {
+   width: 100%;
+   height: 500px;
+   background-color: rgba(24, 16, 13, 0.9);
+
+   display: flex;
+   justify-content: flex-start;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   min-height: 100%;
+   z-index: 1;
+  }
+
+  .home__nav {
+    float: left;
+    @include centeringStuffWithUnknownSize;
+  }
+
+  .home__nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .home__nav li {
+    float: none;
+    padding: 0;
+    padding-top: 10%;
+  }
+
+  .home__nav li:first-of-type {
+    display: block;
+    padding: 0;
+  }
+
+  .home__nav li:nth-of-type(2) {
+    padding-left: 0;
+  }
+
+  .mobilenav--hidden {
+    display: none;
+  }
+
+  .home__logoyong {
+    width: 80%;
+    padding: 95px 0 0 37%;
+  }
+
+  .home__sidebar {
+    margin-left: 10%;
+  }
+
+  .mobilemenu {
+    display: block;
+    position: fixed;
+    top: 85%;
+    right: 5%;
+    background: lighten($menu-bg-color, 20);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .mobilemenu__img {
+    width: 30px;
+    @include centeringStuff(30, 30, px);
+  }
+
+  /*------------------ ABOUT ---------------------*/
+  .about__header {
+    display: grid;
+    grid-template-columns: 30% 40%;
+    grid-template-rows: 20% 100%;
+    grid-column-gap: 5%;
+    grid-template-areas:
+      "aboutus line"
+      "descrAbout descrAbout";
+
+    justify-content: center;
+  }
+
+  h2 {
+    color: $main-color;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .section__about h2 {
+    grid-area: aboutus;
+  }
+
+  .about__hl {
+    margin: 12% 0 0 0;
+    width: 100%;
+    height: 0;
+    grid-area: line;
+  }
+
+  /*------------------ ABOUT ---------------------*/
+  .about__gallery {
+    display: block;
+    margin: 55px auto 0 auto;
+    width: 70%;
+  }
+
+  .gallery_wrapper {
+    width: 100%;
+    height: 20em;
+  }
+
+  @for $i from 1 through 4 {
+    .gallery_wrapper:nth-of-type(#{$i}) {
+      display: none;
+    }
+  }
+
+  /*------------------ MENU ---------------------*/
+  .section__menu {
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .section__menu object{
+    display: block;
+    width: 80%;
+    height: 100%;
+  }
+
+  .menu__header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 0 5% 0;
+  }
+
+  .section__menu h2 {
+    width: 20%;
+  }
+
+  .menu__hl {
+    width: 50%;
+    margin: 5% 0 0 5%;
+    height: 0px;
+  }
+
+  .menu__container {
+    height: 110%;
+  }
+
+  .menu__h3, .menu__sidenav, .menu__sidenavLines, .menu__container, .menu__arrows {
+    display: none;
+  }
+
+  /*------------------ BOOKING ---------------------*/
+  .booking__container {
+    width: 70%;
+    height: 65%;
+    border: 3px solid $main-color;
+    margin: 0;
+    @include centeringStuffWithUnknownSize;
+    text-align: center;
+  }
+
+  /*------------------ CONTACT ---------------------*/
+  .contact__header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section__contact h2 {
+    width: 30%;
+  }
+
+  .contact__hl {
+    margin-left: 5%;
+    width: 40%;
+    margin-top: 115px;
+    height: 0px;
+  }
+
+  .contact--flexcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5% 0 5% 0;
+  }
+
+  .contact__impressum {
+    margin: 5% 0 10% 0;
+    width: 75%;
+  }
+
+  .contact__impressum p {
+    margin: 0;
+  }
+
+  /*------------------ MAP ---------------------*/
+  .contact__maps {
+    width: 100%;
+    height: 315px;
+  }
+}
