@@ -4,12 +4,16 @@
 @media only screen and (max-width: 600px) {
 
   /*------------------ OVERLAY ---------------------*/
+  .specials__modal {
+    display: none;
+  }
+
   .ad__title {
     font-size: 40px;
     text-align: center;
     margin: 20% 0 0 0;
   }
-  
+
   .modal__ad {
     width: 80%;
     height: 50%;
@@ -23,6 +27,10 @@
 
 
   /*------------------ HOME ---------------------*/
+  .section__home {
+    background-attachment: initial;
+  }
+
   .header__hl, .uparrow, .home__mousedown, .home__rightBottomCornerLines {
     display: none;
   }
