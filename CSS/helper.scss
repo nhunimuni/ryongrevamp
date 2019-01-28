@@ -27,10 +27,10 @@ $modal-bg-color: rgba(0, 0, 0, 0.9);
 @mixin backgroundImage($imgpath, $repeat, $position, $size, $attachment) {
     background: {
         image: url($imgpath);
-        repeat: $repeat;
       position: $position;
           size: $size;
       attachment: $attachment;
+      repeat: $repeat;
     }
     -o-background-size: $size;
    -moz-background-size: $size;
