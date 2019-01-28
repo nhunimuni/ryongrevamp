@@ -32,4 +32,7 @@ $modal-bg-color: rgba(0, 0, 0, 0.9);
           size: $size;
       attachment: $attachment;
     }
+    -o-background-size: $size;
+   -moz-background-size: $size;
+   -webkit-background-size: $size;
 }
