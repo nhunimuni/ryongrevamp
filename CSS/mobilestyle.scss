@@ -27,8 +27,8 @@
 
 
   /*------------------ HOME ---------------------*/
-  .section__home {
-    background-attachment: initial;
+  .section__home, .section__booking {
+    background-attachment: cover;
   }
 
   .header__hl, .uparrow, .home__mousedown, .home__rightBottomCornerLines {
