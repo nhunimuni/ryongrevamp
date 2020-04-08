@@ -2,6 +2,7 @@
 
 This is an uni-project in the 5th semester. For this project i decided to create a static website of a vegan restaurant called Ryong. At that time, their web presence wasn't as developed as today. Thus i wanted to revamp their website, to match their image. In this course, the main focus was to expand our Frontend-Skills. The task description is seen below (it's in german tho).
 
+------------------------------
 BEM Schreibweise https://cssguidelin.es/#bem-like-naming
 
 Erstellen Sie eine Webpräsenz zu einem selbst gewählten Thema.
