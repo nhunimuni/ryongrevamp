@@ -1,0 +1,22 @@
+{
+  "name": "ryongrevamp",
+  "version": "1.0.0",
+  "description": "This is an uni-project in the 5th semester (BS Media Programming). For this project i decided to create a static website of a vegan restaurant called Ryong. At that time, their web presence wasn't as developed as today. Thus i wanted to revamp the website, to match their image. In this course, the main focus was to expand our frontend skills. The task description is seen below (it's in german).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhunimuni/ryongrevamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhunimuni/ryongrevamp/issues"
+  },
+  "homepage": "https://github.com/nhunimuni/ryongrevamp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
